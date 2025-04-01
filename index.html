@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunities Hub 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header>
+        <h1>Opportunities Hub 2025</h1>
+        <p>Discover the latest **Internships, Jobs, Hackathons, and Open-Source** programs</p>
+    </header>
+
+    <nav>
+        <button class="tab-button active" onclick="switchTab('internships')">Internships</button>
+        <button class="tab-button" onclick="switchTab('jobs')">Jobs</button>
+        <button class="tab-button" onclick="switchTab('hackathons')">Hackathons</button>
+        <button class="tab-button" onclick="switchTab('opensource')">Open Source</button>
+    </nav>
+
+    <main>
+        <section id="internships" class="tab-content active">
+            <h2>Latest Internships</h2>
+            <div class="card-container" id="internship-list"></div>
+        </section>
+
+        <section id="jobs" class="tab-content">
+            <h2>Latest Jobs</h2>
+            <div class="card-container" id="job-list"></div>
+        </section>
+
+        <section id="hackathons" class="tab-content">
+            <h2>Upcoming Hackathons</h2>
+            <div class="card-container" id="hackathon-list"></div>
+        </section>
+
+        <section id="opensource" class="tab-content">
+            <h2>Top Open-Source Projects</h2>
+            <div class="card-container" id="opensource-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Opportunities Hub | Designed for Future Innovators 🚀</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
