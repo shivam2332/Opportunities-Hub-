@@ -4,49 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opportunities Hub 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="background-animation"></div>
-    
-    <header>
-        <h1>Opportunities Hub 2025</h1>
-        <p>Discover the latest **Internships, Jobs, Hackathons, and Open-Source** programs</p>
-    </header>
+<body class="dark min-h-screen transition-colors duration-300">
+    <div class="container mx-auto p-6">
+        <!-- Header -->
+        <header class="bg-black bg-opacity-60 p-6 rounded-lg sticky top-0 z-10 header-slide">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold">Opportunities Hub 2025</h1>
+                    <p class="text-sm">Your gateway to internships, jobs, hackathons, and open-source opportunities!</p>
+                    <p class="mt-2 text-md">Looking for your dream internship or job in 2025? You’re in the right place! We feature the latest openings from top companies like Google, Amazon, and xAI, updated daily. Start your career journey today with us!</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle p-2 bg-gray-700 rounded hover:bg-gray-600">Light Mode</button>
+            </div>
+        </header>
 
-    <nav>
-        <button class="tab-button active" onclick="switchTab('internships')">Internships</button>
-        <button class="tab-button" onclick="switchTab('jobs')">Jobs</button>
-        <button class="tab-button" onclick="switchTab('hackathons')">Hackathons</button>
-        <button class="tab-button" onclick="switchTab('opensource')">Open Source</button>
-    </nav>
+        <!-- Search & Filters -->
+        <div class="my-6 flex flex-col md:flex-row gap-4">
+            <input type="text" id="search" placeholder="Search by title, company, or location..." class="w-full p-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white">
+            <select id="type-filter" class="p-3 bg-gray-800 rounded-lg text-white">
+                <option value="">All Types</option>
+                <option value="Internship">Internship</option>
+                <option value="Full-Time Job">Full-Time Job</option>
+            </select>
+            <select id="location-filter" class="p-3 bg-gray-800 rounded-lg text-white">
+                <option value="">All Locations</option>
+                <option value="Remote">Remote</option>
+                <option value="San Francisco, CA">San Francisco, CA</option>
+                <option value="New York, NY">New York, NY</option>
+                <option value="Seattle, WA">Seattle, WA</option>
+                <option value="Austin, TX">Austin, TX</option>
+            </select>
+            <select id="skills-filter" class="p-3 bg-gray-800 rounded-lg text-white">
+                <option value="">All Skills</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="AI/ML">AI/ML</option>
+                <option value="Cloud">Cloud</option>
+            </select>
+        </div>
 
-    <main>
-        <section id="internships" class="tab-content active">
-            <h2>Latest Internships</h2>
-            <div class="card-container" id="internship-list"></div>
-        </section>
+        <!-- Tabs -->
+        <nav class="flex gap-2 mb-6">
+            <button class="tab-button bg-cyan-500 p-3 rounded-lg active" onclick="switchTab('opportunities')">Opportunities</button>
+            <button class="tab-button bg-cyan-500 p-3 rounded-lg" onclick="switchTab('hackathons')">Hackathons</button>
+            <button class="tab-button bg-cyan-500 p-3 rounded-lg" onclick="switchTab('opensource')">Open Source</button>
+        </nav>
 
-        <section id="jobs" class="tab-content">
-            <h2>Latest Jobs</h2>
-            <div class="card-container" id="job-list"></div>
-        </section>
+        <!-- Main Content -->
+        <main>
+            <section id="opportunities" class="tab-content active">
+                <h2 class="text-2xl font-semibold mb-4">Latest Opportunities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="opportunities-list"></div>
+            </section>
+            <section id="hackathons" class="tab-content hidden">
+                <h2 class="text-2xl font-semibold mb-4">Upcoming Hackathons</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="hackathons-list"></div>
+            </section>
+            <section id="opensource" class="tab-content hidden">
+                <h2 class="text-2xl font-semibold mb-4">Top Open-Source Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="opensource-list"></div>
+            </section>
+        </main>
 
-        <section id="hackathons" class="tab-content">
-            <h2>Upcoming Hackathons</h2>
-            <div class="card-container" id="hackathon-list"></div>
-        </section>
-
-        <section id="opensource" class="tab-content">
-            <h2>Top Open-Source Projects</h2>
-            <div class="card-container" id="opensource-list"></div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Opportunities Hub | Designed for Future Innovators 🚀</p>
-    </footer>
-
+        <!-- Footer -->
+        <footer class="bg-black bg-opacity-60 p-4 mt-6 rounded-lg">
+            <p>© 2025 Opportunities Hub | Designed for Future Innovators 🚀 | Saved Items: <span id="saved-count">0</span></p>
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
